@@ -7,6 +7,7 @@ import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
 import AuthService from "./components/auth/AuthService";
 import Contents from "./components/contents/Contents";
+import CallToAction from "./components/routes/CallToAction";
 
 class App extends Component {
   //en el tiempo de construcción de la aplicación, creamos una instancia del authservice
@@ -54,7 +55,6 @@ class App extends Component {
       return (
         <React.Fragment>
           <Redirect to="/home" />
-
           <div className="App">
             <header className="App-header">
               <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
@@ -67,12 +67,13 @@ class App extends Component {
 
       return (
         <React.Fragment>
-          <Redirect to="/login" />
+          <Redirect to="/" />
 
           <div className="App">
             <header className="App-header">
               <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
               <Switch>
+                <Route exact path="/" render={() => <CallToAction />} />
                 <Route exact path="/signup" render={() => <Signup getUser={this.getUser} />} />
                 <Route exact path="/login" render={() => <Login getUser={this.getUser} />} />
               </Switch>

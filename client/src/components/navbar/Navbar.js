@@ -3,7 +3,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import AuthService from "../auth/AuthService";
-import logo from "../../logo-ironhack-blue.png";
 import "./Navbar.css"
 
 class Navbar extends Component {
