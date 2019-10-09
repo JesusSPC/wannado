@@ -5,7 +5,7 @@ import AuthService from './AuthService'
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = { username: '', password: '' };
+    this.state = { username: '', password: ''};
     this.service = new AuthService();
   }
 
@@ -41,23 +41,23 @@ class Login extends Component {
   render() {
 
     return (<div>
-      <h3>Sign in with your account</h3>
+      <h3>Please, login to our site</h3>
 
       <form onSubmit={this.handleFormSubmit}>
         <fieldset>
-          {/* <label>Username:</label> */}
-          <input type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} placeholder="Username"/>
+          <label>Username: </label>
+          <input type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
         </fieldset>
 
         <fieldset>
-          {/* <label>Password:</label> */}
-          <input type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} placeholder="Username"/>
+          <label>Password: </label>
+          <input type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
         </fieldset>
 
         <input type="submit" value="Login" />
       </form>
 
-      <h2>{this.state.error ? 'Incorrect username or password. Please, check your credentials' : ''}</h2>
+      <h1>{this.state.error ? 'Error' : ''}</h1>
     </div>)
   }
 }

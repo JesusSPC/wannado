@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
-const tasksSchema = new Schema({
+const taskSchema = new Schema({
+  username: String,
   name: String,
-  Task: [
-    {name: String},
-    {time: Number}
-  ],
+  time: Number,
+  perday: Number,
+  date: Date,
   creatorId: { type : Schema.Types.ObjectId, ref: 'User' },
 }, {
   timestamps: {
@@ -15,5 +15,5 @@ const tasksSchema = new Schema({
   }
 });
 
-const Tasks = mongoose.model('Sandwich', tasksSchema);
-module.exports = Tasks;
+const Task = mongoose.model('Task', taskSchema);
+module.exports = Task;

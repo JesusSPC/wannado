@@ -29,11 +29,6 @@ class Navbar extends Component {
               <a onClick={this.handleLogout}>Logout</a>
             </li>
           </ul>
-
-          {/* <div className="header">
-            <img src={logo} alt="" height="100"/>
-            <h2>Welcome {this.state.loggedInUser.username} - Ironhacker</h2>
-          </div> */}
         </nav>
       );
     } else {

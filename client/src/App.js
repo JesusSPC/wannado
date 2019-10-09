@@ -2,13 +2,16 @@ import React, { Component } from "react";
 import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
 
+// import ProjectList from './components/projects/ProjectList';
 import Navbar from "./components/navbar/Navbar";
+// import ProjectDetails from './components/projects/ProjectDetails';
 import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
 import AuthService from "./components/auth/AuthService";
 import Contents from "./components/contents/Contents";
 import CallToAction from "./components/routes/CallToAction";
 
+//App es la aplicación base, que se sirve del servicio AuthService para conectar con la bbdd
 class App extends Component {
   //en el tiempo de construcción de la aplicación, creamos una instancia del authservice
   constructor(props) {
@@ -55,19 +58,21 @@ class App extends Component {
       return (
         <React.Fragment>
           <Redirect to="/home" />
+
           <div className="App">
             <header className="App-header">
               <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
+              {/* aqui simplemente se muestra un lorem ipsum genérico para que veáis contenidos que solo se muestran a usuarios logeados */}
               <Contents />
             </header>
           </div>
         </React.Fragment>
       );
     } else {
-
+      //si no estás logeado, mostrar opcionalmente o login o signup
       return (
         <React.Fragment>
-          <Redirect to="/" />
+          <Redirect to="/signup" />
 
           <div className="App">
             <header className="App-header">

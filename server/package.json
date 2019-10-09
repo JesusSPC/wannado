@@ -27,5 +27,9 @@
   },
   "devDependencies": {
     "nodemon": "^1.12.1"
+  },
+  "mdSeed": {
+    "seedersFolder": "./seeders",
+    "customSeederTemplate": "./md-seed-template.ejs"
   }
 }

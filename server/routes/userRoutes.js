@@ -5,4 +5,9 @@ const passport = require('passport');
 const User = require('../models/User');
 const Tasks = require('../models/Tasks');
 
+router.get('/user/home', (req, res, next) => {
+  User.findOne(req.user)
+  .then(user => res.json({user}))
+})
+
 module.exports = router;

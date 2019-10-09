@@ -1,4 +1,5 @@
-import axios from 'axios'
+// auth/auth-service.js
+import axios from 'axios';
 
 class AuthService {
   constructor() {
@@ -8,12 +9,12 @@ class AuthService {
     });
   }
 
-  signup = (username, password) => {
-    return this.service.post('/signup', {username, password})
+  signup = (username, password, email) => {
+    return this.service.post('/signup', {username, password, email})
     .then(response => response.data)
   }
 
-  login = (username, password) => {
+  login = (username, password, email) => {
     return this.service.post('/login', {username, password})
     .then(response => response.data)
   }
